@@ -7,7 +7,7 @@ def hello_world():
     return 'Hello, World!'
 
 
-@app.route('/webhook')
+@app.route('/webhook',methods=['POST'])
 def print():
     print(json.dumps(request.get_json(), indent = 2))
     return 'ok'
