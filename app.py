@@ -8,6 +8,6 @@ def hello_world():
 
 
 @app.route('/webhook',methods=['POST'])
-def print():
+def webhook():
     print(json.dumps(request.get_json(), indent = 4))
     return 'ok'
