@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, request
+import json
 app = Flask(__name__)
 
 @app.route('/')
@@ -6,6 +7,7 @@ def hello_world():
     return 'Hello, World!'
 
 
-@app.route('/print')
+@app.route('/webhook')
 def print():
-    return 'Hello, World!2'
+    print(json.dumps(request.get_json(), indent = 2))
+    return 'ok'
